@@ -59,8 +59,12 @@ Verify:
   
   Navigate to the Solr Dashboard 
   --> Select NJ Core or NJ Core from the drop down on the left side. 
+  
   --> Click on execute Query, This will show the results of the seaarch hits. 
+  
   --> You can also search by a criteria by giving the name and value pair in the "q" text box (venue_name=Coffee) 
+  
   --> This will result in an url http://localhost:8983/NY-core/select?q=venue_name%3D+Coffee&wt=json&indent=true
       and should result in the search responses as Json. 
+      
   
