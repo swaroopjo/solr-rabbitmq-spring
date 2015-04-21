@@ -68,3 +68,42 @@ Verify:
       and should result in the search responses as Json. 
       
   
+{
+  "responseHeader": {
+    "status": 0,
+    "QTime": 2,
+    "params": {
+      "indent": "true",
+      "q": "venue_name=coffee",
+      "_": "1429630739222",
+      "wt": "json"
+    }
+  },
+  "response": {
+    "numFound": 3,
+    "start": 0,
+    "docs": [
+      {
+        "rsvp_id": 1547255045,
+        "venue_name": "Think Coffee",
+        "group_name": "Lundi Petit DÃƒÂ©jeuner et FranÃƒÂ§ais",
+        "group_country": "us",
+        "_version_": 1499074568572108800
+      },
+      {
+        "rsvp_id": 1547255047,
+        "venue_name": "Think Coffee",
+        "group_name": "Lundi Petit DÃƒÂ©jeuner et FranÃƒÂ§ais",
+        "group_country": "us",
+        "_version_": 1499074570707009500
+      },
+      {
+        "rsvp_id": 1547255459,
+        "venue_name": "Think Coffee",
+        "group_name": "Lundi Petit DÃƒÂ©jeuner et FranÃƒÂ§ais",
+        "group_country": "us",
+        "_version_": 1499074993676353500
+      }
+    ]
+  }
+}
