@@ -1,0 +1,17 @@
+<dataConfig>
+
+<dataSource type="JdbcDataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://127.0.0.1:3306/shopping_cart" user="ecomm_usr" password="ecomm_1!" batchSize="1" />
+    <document name="customers">
+
+        <entity name="customer" query="SELECT * FROM customer">
+            <field column="customerid" name="customerid" />
+            <field column="customername" name="customername" />
+<field column="contactname" name="contactname" />
+<field column="address" name="address" />
+<field column="city" name="city" />
+<field column="postalcode" name="postalcode" />
+<field column="country" name="country" />
+        </entity>
+
+    </document>
+</dataConfig>
