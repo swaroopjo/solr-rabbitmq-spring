@@ -1,6 +1,10 @@
 package com.lio.listener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.solr.common.SolrInputDocument;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -56,6 +60,13 @@ public class RsvpNJListener implements MessageListener {
 				doc.addField("venue_name", ((JSONObject)rsvp.get("venue")).get("venue_name"));
 				doc.addField("group_name", ((JSONObject)rsvp.get("group")).get("group_name"));
 				doc.addField("group_country", ((JSONObject)rsvp.get("group")).get("group_country"));
+				JSONArray topics = ((JSONArray)((JSONObject)rsvp.get("group")).get("group_topics"));
+				List<String> topicList = new ArrayList<String>();
+				for(Object object:topics.toArray()){
+					topicList.add(((JSONObject)object).get("topic_name").toString());
+				}
+				doc.addField("topic", topicList.toArray());
+				
 				sTemplate.saveDocument(doc);
 				sTemplate.commit();
 			} 

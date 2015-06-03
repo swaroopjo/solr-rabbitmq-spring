@@ -57,6 +57,7 @@ public class RsvpNYListener implements MessageListener {
 				sTemplate.saveDocument(doc);
 				sTemplate.commit();
 			} catch (Exception e) {
+				e.printStackTrace();
 				logger.error("unable to commit the document to the Solr Instance");
 			}
 			
