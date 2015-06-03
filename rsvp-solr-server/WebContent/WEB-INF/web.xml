@@ -16,7 +16,28 @@
  limitations under the License.
 -->
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" metadata-complete="true" version="2.5">
-  <filter>
+  
+<filter>
+    <filter-name>cross-origin</filter-name>
+    <filter-class>org.eclipse.jetty.servlets.CrossOriginFilter</filter-class>
+    <init-param>
+        <param-name>allowedOrigins</param-name>
+        <param-value>*</param-value>
+    </init-param>
+    <init-param>
+        <param-name>allowedMethods</param-name>
+        <param-value>GET,POST,HEAD</param-value>
+    </init-param>
+    <init-param>
+        <param-name>allowedHeaders</param-name>
+        <param-value>X-Requested-With,Content-Type,Accept,Origin</param-value>
+    </init-param>
+</filter>
+<filter-mapping>
+    <filter-name>cross-origin</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+   <filter>
     <filter-name>SolrRequestFilter</filter-name>
     <filter-class>org.apache.solr.servlet.SolrDispatchFilter</filter-class>
   </filter>

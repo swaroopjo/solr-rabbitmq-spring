@@ -11,8 +11,10 @@
     
     <field name="group_name" type="text_general" indexed="true" stored="true"/>
    	 <field name="group_country" type="text_general" indexed="true" stored="true"/>
+   	 <field name="topic" type="text_general" indexed="true" stored="true" multiValued="true"/>
+   	 
    	<uniqueKey>rsvp_id</uniqueKey>
-<defaultSearchField>text</defaultSearchField>
+	<defaultSearchField>text</defaultSearchField>
   
    <field name="text" type="text_general" indexed="true" stored="false" multiValued="true"/>
 
@@ -20,7 +22,7 @@
     <copyField source="venue_name" dest="text"/>
     <copyField source="group_name" dest="text"/>
     <copyField source="group_country" dest="text"/>
-   
+    <copyField source="topic" dest="text"/>
      <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
 
